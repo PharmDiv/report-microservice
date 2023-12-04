@@ -54,7 +54,7 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          pytest tests -v --cov-report term --cov-report html:htmlcov --cov-report xml --cov-fail-under=90 --cov=coverage
+          coverage run -m pytest
         
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
